@@ -1,17 +1,16 @@
 package org.lin.example.service;
 
-
-import com.baomidou.mybatisplus.service.IService;
 import org.lin.example.entity.User;
+import com.baomidou.mybatisplus.service.IService;
 
 /**
  * <p>
  *  服务类
  * </p>
  *
- * @author K神带你飞
- * @since 2018-03-03
+ * @author linxianqinwork@qq.com
+ * @since 2018-03-04
  */
 public interface UserService extends IService<User> {
-	
+
 }

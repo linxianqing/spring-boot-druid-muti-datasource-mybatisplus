@@ -1,17 +1,16 @@
 package org.lin.example.mapper;
 
-
-import com.baomidou.mybatisplus.mapper.BaseMapper;
 import org.lin.example.entity.User;
+import org.lin.example.base.SuperMapper;
 
 /**
  * <p>
-  *  Mapper 接口
+ *  Mapper 接口
  * </p>
  *
- * @author K神带你飞
- * @since 2018-03-03
+ * @author linxianqinwork@qq.com
+ * @since 2018-03-04
  */
-public interface UserMapper extends BaseMapper<User> {
+public interface UserMapper extends SuperMapper<User> {
 
 }

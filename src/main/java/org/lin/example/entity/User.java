@@ -1,5 +1,8 @@
 package org.lin.example.entity;
 
+import com.baomidou.mybatisplus.activerecord.Model;
+import java.io.Serializable;
+import com.baomidou.mybatisplus.activerecord.Model;
 import java.io.Serializable;
 
 /**
@@ -7,48 +10,53 @@ import java.io.Serializable;
  * 
  * </p>
  *
- * @author K神带你飞
- * @since 2018-03-03
+ * @author linxianqinwork@qq.com
+ * @since 2018-03-04
  */
-public class User implements Serializable {
+public class User extends Model<User> {
 
     private static final long serialVersionUID = 1L;
 
-	private Integer id;
-	private String name;
-	private Integer age;
+    private Integer id;
+    private String name;
+    private Integer age;
 
 
-	public Integer getId() {
-		return id;
-	}
+    public Integer getId() {
+        return id;
+    }
 
-	public void setId(Integer id) {
-		this.id = id;
-	}
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public Integer getAge() {
-		return age;
-	}
+    public Integer getAge() {
+        return age;
+    }
 
-	public void setAge(Integer age) {
-		this.age = age;
-	}
+    public void setAge(Integer age) {
+        this.age = age;
+    }
 
-	@Override
-	public String toString() {
-		return "User{" +
-			", id=" + id +
-			", name=" + name +
-			", age=" + age +
-			"}";
-	}
+    @Override
+    protected Serializable pkVal() {
+        return this.id;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+        ", id=" + id +
+        ", name=" + name +
+        ", age=" + age +
+        "}";
+    }
 }
