@@ -39,9 +39,9 @@ public class UserMapperTest {
     @Test
     public void test1() {
 //        DbContextHolder.setDbType(DBTypeEnum.one);
-        User user1 = userMapper.selectById(1);
-        System.out.println(user1);
-        User user = userService.selectById(1);
+//        User user1 = userMapper.selectById(1);
+//        System.out.println(user1);
+        User user = userService.select(1);
         System.out.println(user);
     }
 

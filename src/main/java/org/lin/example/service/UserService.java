@@ -12,5 +12,6 @@ import com.baomidou.mybatisplus.service.IService;
  * @since 2018-03-04
  */
 public interface UserService extends IService<User> {
+    User select(int i);
 
 }
