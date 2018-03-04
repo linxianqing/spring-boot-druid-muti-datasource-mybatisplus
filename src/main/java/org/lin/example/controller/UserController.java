@@ -1,4 +1,4 @@
-package org.lin.example.springbootdruidmutidatasourcemybatisplus.controller;
+package org.lin.example.controller;
 
 
 

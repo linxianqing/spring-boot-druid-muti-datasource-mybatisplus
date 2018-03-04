@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:lang="http://www.springframework.org/schema/lang"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/lang http://www.springframework.org/schema/lang/spring-lang.xsd">
+
+    <!--Spring配置整合mybatis过程-->
+    <!--1.配置数据库相关参数-->
+    <!--<context:property-placeholder location="classpath:properties/jdbc.properties"/>-->
+
+    <!--&lt;!&ndash;2.数据库连接池&ndash;&gt;-->
+    <!--&lt;!&ndash;数据源1&ndash;&gt;-->
+    <!--<bean id="dataSourceOne" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">-->
+        <!--&lt;!&ndash;配置连接池属性&ndash;&gt;-->
+        <!--<property name="driverClassName" value="${master.jdbc.driver}"/>-->
+        <!--<property name="url" value="${master.jdbc.url}"/>-->
+        <!--<property name="username" value="${master.jdbc.username}"/>-->
+        <!--<property name="password" value="${master.jdbc.password}"/>-->
+
+        <!--&lt;!&ndash; 初始化连接大小 &ndash;&gt;-->
+        <!--<property name="initialSize" value="0"/>-->
+        <!--&lt;!&ndash; 连接池最大使用连接数量 &ndash;&gt;-->
+        <!--<property name="maxActive" value="20"/>-->
+        <!--&lt;!&ndash; 连接池最大空闲 &ndash;&gt;-->
+        <!--<property name="maxIdle" value="20"/>-->
+        <!--&lt;!&ndash; 连接池最小空闲 &ndash;&gt;-->
+        <!--<property name="minIdle" value="0"/>-->
+        <!--&lt;!&ndash; 获取连接最大等待时间 &ndash;&gt;-->
+        <!--<property name="maxWait" value="60000"/>-->
+        <!--<property name="validationQuery" value="${validationQuery}"/>-->
+        <!--<property name="testOnBorrow" value="false"/>-->
+        <!--<property name="testOnReturn" value="false"/>-->
+        <!--<property name="testWhileIdle" value="true"/>-->
+
+        <!--&lt;!&ndash; 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒 &ndash;&gt;-->
+        <!--<property name="timeBetweenEvictionRunsMillis" value="60000"/>-->
+        <!--&lt;!&ndash; 配置一个连接在池中最小生存的时间，单位是毫秒 &ndash;&gt;-->
+        <!--<property name="minEvictableIdleTimeMillis" value="25200000"/>-->
+        <!--&lt;!&ndash; 打开removeAbandoned功能 &ndash;&gt;-->
+        <!--<property name="removeAbandoned" value="true"/>-->
+        <!--&lt;!&ndash; 1800秒，也就是30分钟 &ndash;&gt;-->
+        <!--<property name="removeAbandonedTimeout" value="1800"/>-->
+        <!--&lt;!&ndash; 关闭abanded连接时输出错误日志 &ndash;&gt;-->
+        <!--<property name="logAbandoned" value="true"/>-->
+        <!--&lt;!&ndash; 监控数据库 &ndash;&gt;-->
+        <!--<property name="filters" value="mergeStat"/>-->
+    <!--</bean>-->
+
+    <!--&lt;!&ndash;数据源2&ndash;&gt;-->
+    <!--<bean id="dataSourceTwo" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">-->
+        <!--&lt;!&ndash;配置连接池属性&ndash;&gt;-->
+        <!--<property name="driverClassName" value="${slave.jdbc.driver}"/>-->
+        <!--<property name="url" value="${slave.jdbc.url}"/>-->
+        <!--<property name="username" value="${slave.jdbc.username}"/>-->
+        <!--<property name="password" value="${slave.jdbc.password}"/>-->
+
+        <!--&lt;!&ndash; 初始化连接大小 &ndash;&gt;-->
+        <!--<property name="initialSize" value="0"/>-->
+        <!--&lt;!&ndash; 连接池最大使用连接数量 &ndash;&gt;-->
+        <!--<property name="maxActive" value="20"/>-->
+        <!--&lt;!&ndash; 连接池最大空闲 &ndash;&gt;-->
+        <!--<property name="maxIdle" value="20"/>-->
+        <!--&lt;!&ndash; 连接池最小空闲 &ndash;&gt;-->
+        <!--<property name="minIdle" value="0"/>-->
+        <!--&lt;!&ndash; 获取连接最大等待时间 &ndash;&gt;-->
+        <!--<property name="maxWait" value="60000"/>-->
+        <!--<property name="validationQuery" value="${validationQuery}"/>-->
+        <!--<property name="testOnBorrow" value="false"/>-->
+        <!--<property name="testOnReturn" value="false"/>-->
+        <!--<property name="testWhileIdle" value="true"/>-->
+
+        <!--&lt;!&ndash; 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒 &ndash;&gt;-->
+        <!--<property name="timeBetweenEvictionRunsMillis" value="60000"/>-->
+        <!--&lt;!&ndash; 配置一个连接在池中最小生存的时间，单位是毫秒 &ndash;&gt;-->
+        <!--<property name="minEvictableIdleTimeMillis" value="25200000"/>-->
+        <!--&lt;!&ndash; 打开removeAbandoned功能 &ndash;&gt;-->
+        <!--<property name="removeAbandoned" value="true"/>-->
+        <!--&lt;!&ndash; 1800秒，也就是30分钟 &ndash;&gt;-->
+        <!--<property name="removeAbandonedTimeout" value="1800"/>-->
+        <!--&lt;!&ndash; 关闭abanded连接时输出错误日志 &ndash;&gt;-->
+        <!--<property name="logAbandoned" value="true"/>-->
+        <!--&lt;!&ndash; 监控数据库 &ndash;&gt;-->
+        <!--<property name="filters" value="mergeStat"/>-->
+    <!--</bean>-->
+
+    <bean id="dataSource" class="org.lin.example.config.datasource.DynamicDataSource">
+        <property name="targetDataSources">
+            <map >
+                <entry key="dataSourceOne" value-ref="dataSourceOne" />
+                <entry key="dataSourceTwo" value-ref="dataSourceTwo" />
+            </map>
+        </property>
+        <property name="defaultTargetDataSource" ref="dataSourceOne"/>
+    </bean>
+
+    <!--约定大于配置-->
+    <!--３.配置SqlSessionFactory对象-->
+    <!--org.mybatis.spring.SqlSessionFactoryBean-->
+    <bean id="sqlSessionFactory" class="com.baomidou.mybatisplus.spring.MybatisSqlSessionFactoryBean">
+        <!--往下才是mybatis和spring真正整合的配置-->
+        <!--注入数据库连接池-->
+        <property name="dataSource" ref="dataSource"/>
+        <!--配置mybatis全局配置文件:mybatis-config.xml-->
+        <property name="configLocation" value="classpath:mybatis/mybatis-config.xml"/>
+        <!--扫描sql配置文件:mapper需要的xml文件-->
+        <property name="mapperLocations" value="classpath:mybatis/mapper/*.xml"/>
+        <property name="typeAliasesPackage" value="org.lin.example.entity"/>
+        <!-- 插件配置 -->
+        <property name="plugins">
+            <array>
+                <!-- 分页插件配置 -->
+                <bean id="paginationInterceptor" class="com.baomidou.mybatisplus.plugins.PaginationInterceptor">
+                    <!-- 指定数据库方言 -->
+                    <property name="dialectType" value="mysql"/>
+                    <!--<property name="optimizeType" value="aliDruid"/>-->
+                </bean>
+                <!-- 如需要开启其他插件，可配置于此 -->
+            </array>
+        </property>
+        <!-- MP 全局配置注入 -->
+        <property name="globalConfig" ref="globalConfig"/>
+    </bean>
+
+    <!-- 定义 MP 全局策略 -->
+    <bean id="globalConfig" class="com.baomidou.mybatisplus.entity.GlobalConfiguration">
+        <!-- 主键策略配置 -->
+        <!-- 可选参数
+            AUTO->`0`("数据库ID自增")
+            INPUT->`1`(用户输入ID")
+            ID_WORKER->`2`("全局唯一ID")
+            UUID->`3`("全局唯一ID")
+        -->
+        <property name="idType" value="2"/>
+
+        <!-- 数据库类型配置 -->
+        <!-- 可选参数（默认mysql）
+            MYSQL->`mysql`
+            ORACLE->`oracle`
+            DB2->`db2`
+            H2->`h2`
+            HSQL->`hsql`
+            SQLITE->`sqlite`
+            POSTGRE->`postgresql`
+            SQLSERVER2005->`sqlserver2005`
+            SQLSERVER->`sqlserver`
+        -->
+        <!-- Oracle需要添加该项 -->
+        <!--<property name="dbType" value="oracle"/>-->
+        <!--全局表为下划线命名设置 true-->
+        <!--<property name="dbColumnUnderline" value="true"/>-->
+    </bean>
+
+
+
+</beans>

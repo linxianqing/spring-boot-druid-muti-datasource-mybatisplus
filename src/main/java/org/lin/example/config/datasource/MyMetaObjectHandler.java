@@ -1,4 +1,4 @@
-package org.lin.example.springbootdruidmutidatasourcemybatisplus;
+package org.lin.example.config.datasource;
 
 import com.baomidou.mybatisplus.mapper.MetaObjectHandler;
 import javafx.application.Application;

@@ -1,4 +1,4 @@
-package org.lin.example.springbootdruidmutidatasourcemybatisplus;
+package org.lin.example;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

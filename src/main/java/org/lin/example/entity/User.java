@@ -1,4 +1,4 @@
-package org.lin.example.springbootdruidmutidatasourcemybatisplus.entity;
+package org.lin.example.entity;
 
 import java.io.Serializable;
 

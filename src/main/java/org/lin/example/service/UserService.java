@@ -1,8 +1,8 @@
-package org.lin.example.springbootdruidmutidatasourcemybatisplus.service;
+package org.lin.example.service;
 
 
 import com.baomidou.mybatisplus.service.IService;
-import org.lin.example.springbootdruidmutidatasourcemybatisplus.entity.User;
+import org.lin.example.entity.User;
 
 /**
  * <p>

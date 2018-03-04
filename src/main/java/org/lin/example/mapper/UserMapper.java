@@ -1,8 +1,8 @@
-package org.lin.example.springbootdruidmutidatasourcemybatisplus.mapper;
+package org.lin.example.mapper;
 
 
 import com.baomidou.mybatisplus.mapper.BaseMapper;
-import org.lin.example.springbootdruidmutidatasourcemybatisplus.entity.User;
+import org.lin.example.entity.User;
 
 /**
  * <p>
