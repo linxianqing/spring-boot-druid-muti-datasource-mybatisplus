@@ -1,9 +1,8 @@
 package org.lin.example.entity;
 
-import com.baomidou.mybatisplus.annotations.TableId;
-import com.baomidou.mybatisplus.enums.IdType;
-import com.baomidou.mybatisplus.activerecord.Model;
 import java.io.Serializable;
+
+import com.baomidou.mybatisplus.activerecord.Model;
 
 /**
  * <p>
@@ -22,6 +21,7 @@ public class User extends Model<User> {
     private Integer age;
     private String test;
     private String test1;
+
 
 
     public Integer getId() {
@@ -78,5 +78,10 @@ public class User extends Model<User> {
         ", test=" + test +
         ", test1=" + test1 +
         "}";
+    }
+    public User() {
+    }
+    public User(String name) {
+        this.name = name;
     }
 }

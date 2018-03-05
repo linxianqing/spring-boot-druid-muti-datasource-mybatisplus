@@ -6,8 +6,6 @@ import java.util.List;
 import com.baomidou.mybatisplus.mapper.EntityWrapper;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.lin.example.config.datasource.DBTypeEnum;
-import org.lin.example.config.datasource.DbContextHolder;
 import org.lin.example.entity.User;
 import org.lin.example.mapper.UserMapper;
 import org.lin.example.service.UserService;
@@ -85,17 +83,11 @@ public class UserMapperTest {
 
     @Test
     public void test2() {
-        DbContextHolder.setDbType(DBTypeEnum.tow);
-        List<User> userList = userService.selectList(new EntityWrapper<User>());
-        for (User user : userList) {
-            System.out.println(user.getId() + "#" + user.getName() + "#" + user.getAge());
-        }
+        EntityWrapper<User> ew = new EntityWrapper<>();
+        ew.eq("name", "aaa");
+        List<User> users = userService.selectList(ew);
+        System.out.println(users.toString());
 
-        DbContextHolder.setDbType(DBTypeEnum.one);
-        List<User> idsUserList = userService.selectList(new EntityWrapper<User>());
-        for (User user : idsUserList) {
-            System.out.println(user.getId() + "#" + user.getName() + "#" + user.getAge());
-        }
     }
 
 
