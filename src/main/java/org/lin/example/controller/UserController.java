@@ -11,7 +11,7 @@ import org.springframework.stereotype.Controller;
  * </p>
  *
  * @author linxianqinwork@qq.com
- * @since 2018-03-04
+ * @since 2018-03-05
  */
 @Controller
 @RequestMapping("/user")

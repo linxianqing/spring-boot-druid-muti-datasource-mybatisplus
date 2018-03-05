@@ -9,9 +9,8 @@ import com.baomidou.mybatisplus.service.IService;
  * </p>
  *
  * @author linxianqinwork@qq.com
- * @since 2018-03-04
+ * @since 2018-03-05
  */
 public interface UserService extends IService<User> {
-    User select(int i);
 
 }

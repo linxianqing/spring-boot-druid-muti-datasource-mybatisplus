@@ -9,7 +9,7 @@ import org.lin.example.base.SuperMapper;
  * </p>
  *
  * @author linxianqinwork@qq.com
- * @since 2018-03-04
+ * @since 2018-03-05
  */
 public interface UserMapper extends SuperMapper<User> {
 

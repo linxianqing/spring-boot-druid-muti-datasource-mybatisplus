@@ -7,11 +7,13 @@
         <result column="id" property="id" />
         <result column="name" property="name" />
         <result column="age" property="age" />
+        <result column="test" property="test" />
+        <result column="test1" property="test1" />
     </resultMap>
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        id, name, age
+        id, name, age, test, test1
     </sql>
 
 </mapper>

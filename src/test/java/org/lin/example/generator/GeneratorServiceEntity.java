@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.baomidou.mybatisplus.enums.IdType;
 import com.baomidou.mybatisplus.generator.AutoGenerator;
 import com.baomidou.mybatisplus.generator.InjectionConfig;
 import com.baomidou.mybatisplus.generator.config.*;
@@ -29,8 +30,9 @@ public class GeneratorServiceEntity {
     @Test
     public void generateCode() {
         String packageName = "org.lin.example";
+        String[] tables = {"user", "tttt"};
         boolean serviceNameStartWithI = false;//user -> UserService, 设置成true: user -> IUserService
-        generateByTables(serviceNameStartWithI, packageName, "user", "user");
+        generateByTables(serviceNameStartWithI, packageName, tables);
     }
 
     private void generateByTables(boolean serviceNameStartWithI, String packageName, String... tableNames) {
@@ -49,7 +51,7 @@ public class GeneratorServiceEntity {
                 .setDbColumnUnderline(true)
                 .setNaming(NamingStrategy.underline_to_camel)
                 .setInclude(tableNames)                        // 需要生成的表，多个表名传数组
-        // strategy.setExclude(new String[]{"test"}); // 排除生成的表
+//                .setExclude(new String[]{"tttt"})// 排除生成的表
                 .setSuperMapperClass("org.lin.example.base.SuperMapper");// 自定义 mapper 父类
 
         // 自定义 xxList.jsp 生成
@@ -76,7 +78,7 @@ public class GeneratorServiceEntity {
         focList.add(new FileOutConfig("/templates/mapper.xml.vm") {
             @Override
             public String outputFile(TableInfo tableInfo) {
-                return "src/main/resources/mybatis/mapper/"  + tableInfo.getEntityName() + "Mapper.xml";
+                return "src/main/resources/mybatis/mapper/" + tableInfo.getEntityName() + "Mapper.xml";
             }
         });
         cfg.setFileOutConfigList(focList);
@@ -92,7 +94,8 @@ public class GeneratorServiceEntity {
                 .setBaseColumnList(true)// XML columList
                 .setAuthor("linxianqinwork@qq.com")
                 .setOutputDir("src/main/java")
-                .setFileOverride(true);
+                .setFileOverride(true)   //是否覆盖已有文件
+                .setIdType(IdType.ID_WORKER); //主键策略  默认IdType.ID_WORKER http://mp.baomidou.com/#/generate-code
         if (!serviceNameStartWithI) {
             config.setServiceName("%sService");
         }
